@@ -21,9 +21,7 @@ blueprint:
 
 trigger:
   platform: state
-  entity_id:
-    - !input primeiro_switch
-    - !input outros_switches
+  entity_id: !input outros_switches
 
 action:
   - service: switch.toggle
