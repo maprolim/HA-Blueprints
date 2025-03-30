@@ -6,14 +6,14 @@ blueprint:
     primeiro_switch:
       name: Switch ligado diretamente a lâmpada (precisa ser tipo "light").
       selector:
-            entity:
-              domain: light
+        entity:
+          domain: light
     outros_switches:
       name: Demais switches (precisa ser tipo "light").
       selector:
-            entity:
-              domain: light
-              multiple: true
+        entity:
+          domain: light
+          multiple: true
 
 trigger:
   platform: state
