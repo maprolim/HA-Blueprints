@@ -1,1 +1,38 @@
+blueprint:
+  name: Paralelo Virtual - Alternar
+  description: Alterna o switch principal caso qualquer um dos switches secundários forem alternados.
+  domain: automation
+  input:
+    primeiro_switch:
+      name: Switch ligado diretamente a lampada.
+      selector:
+        entity:
+          domain:
+            - switch
+            - light
+    outros_switches:
+      name: Demais switches.
+      selector:
+        entity:
+          domain:
+            - switch
+            - light
+          multiple: true
 
+trigger:
+  platform: state
+  entity_id:
+    - !input primeiro_switch
+    - !input outros_switches
+
+action:
+  - service: switch.toggle
+    target:
+      entity_id: !input.primeiro_switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+
+mode: single
