@@ -4,20 +4,16 @@ blueprint:
   domain: automation
   input:
     primeiro_switch:
-      name: Switch ligado diretamente a lampada.
+      name: Switch ligado diretamente a lâmpada.
       selector:
-        entity:
-          domain:
-            - switch
-            - light
+            entity:
+              domain: light
     outros_switches:
       name: Demais switches.
       selector:
-        entity:
-          domain:
-            - switch
-            - light
-          multiple: true
+            entity:
+              domain: light
+              multiple: true
 
 trigger:
   platform: state
