@@ -20,7 +20,7 @@ trigger:
   entity_id: !input outros_switches
 
 action:
-  - service: switch.toggle
+  - service: light.toggle
     target:
       entity_id: !input primeiro_switch
   - delay:
