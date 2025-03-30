@@ -28,7 +28,7 @@ trigger:
 action:
   - service: switch.toggle
     target:
-      entity_id: !input.primeiro_switch
+      entity_id: !input primeiro_switch
   - delay:
       hours: 0
       minutes: 0
