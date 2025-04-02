@@ -1,0 +1,33 @@
+blueprint:
+  name: Sensor de Presença Liga e Desliga Luz
+  description: Liga a luz quando o sensor de presença detecta presença, desliga quando não.
+  domain: automation
+  input:
+    sensor_de_presenca:
+      name: Sensor de Presença.
+      selector:
+        entity:
+          domain: binary sensor
+   lampadas:
+      name: Lampadas (precisa ser tipo "light").
+      selector:
+        entity:
+          domain: light
+          multiple: true
+
+trigger:
+  platform: state
+  entity_id: !input sensor_de_presenca
+
+action:
+  - service: >
+      {% if trigger.to_state.state == "on" %}
+        light.turn_on
+      {% elif trigger.to_state.state == "off" %}
+        light.turn_off
+      {% endif %}
+    target:
+      entity_id:
+        !input lampadas
+
+mode: single
