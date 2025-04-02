@@ -7,7 +7,7 @@ blueprint:
       name: Sensor de Presença.
       selector:
         entity:
-          domain: binary sensor
+          domain: binary_sensor
     lampadas:
       name: Lampadas (precisa ser tipo "light").
       selector:
