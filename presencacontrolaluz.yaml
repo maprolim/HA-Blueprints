@@ -1,5 +1,5 @@
 blueprint:
-  name: "Presença Controla Luz"
+  name: "Presenca Controla Luz"
   description: "Liga a luz quando o sensor de presença detecta presença, desliga quando não."
   domain: automation
   input:
