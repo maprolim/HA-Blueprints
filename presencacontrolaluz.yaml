@@ -1,6 +1,6 @@
 blueprint:
-  name: Sensor de Presença Liga e Desliga Luz
-  description: Liga a luz quando o sensor de presença detecta presença, desliga quando não.
+  name: "Presença Controla Luz"
+  description: "Liga a luz quando o sensor de presença detecta presença, desliga quando não."
   domain: automation
   input:
     sensor_de_presenca:
